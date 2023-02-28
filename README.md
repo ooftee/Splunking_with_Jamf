@@ -21,5 +21,5 @@ Header Authentication {"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX9
 
 ### CSV Import
 
-[Script.sh
+[PoliciesID_Extract.sh
 ](https://github.com/ooftee/Splunking_with_Jamf/blob/main/PoliciesID_Extract.sh)
