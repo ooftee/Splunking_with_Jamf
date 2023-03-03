@@ -55,8 +55,4 @@ Total of successful patches last week
 `index="jamf" source="http:jamf_webhook"  "webhook.webhookEvent"=RestAPIOperation | search "event.restAPIOperationType"=PUT OR "event.restAPIOperationType"=POST`
 
 ### Policy Failure over 4%
-`index="jamf" source="http:jamf_webhook" 
-| eventstats count(eval('event.successful'=="true")) as "Success"
-| eventstats count(eval('event.successful'=="false")) as "Failure"
-| eval Percent=round(Failure/Success*100,2)
-| search Percent > 4`
+`index="jamf" source="http:jamf_webhook" | eventstats count(eval('event.successful'=="true")) as "Success" | eventstats count(eval('event.successful'=="false")) as "Failure" | eval Percent=round(Failure/Success*100,2) | search Percent > 4`
