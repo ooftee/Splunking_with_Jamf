@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=4tsV-wZE6aw
 
 https://learn.jamf.com/bundle/technical-paper-splunk-current/page/Jamf_Pro_Webhooks_for_Splunk.html
 
-Use the URL format `https://http-inputs-seek.splunkcloud.com/services/collector/raw`
+Use the URL format `https://http-inputs-XXXX.splunkcloud.com/services/collector/raw`
 
 Header Authentication `{"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX9e68"}`
 
