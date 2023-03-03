@@ -28,9 +28,11 @@ Header Authentication {"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX9
 
 ### macOS Versions
 Timechart of all different versions over time
+
 `index="jamf" computerOS.version=* | timechart span=1d dc(computer_meta.id) as id by computerOS.version`
 
 Refine by merging all Ventura and Monterey versions
+
 `index="jamf" computerOS.version=12.* | timechart span=1d dc(computer_meta.id) as Monterey 
 | appendcols 
 [search index="jamf" computerOS.version=13.* | timechart span=1d dc(computer_meta.id) as Ventura | fields Ventura]`
@@ -43,4 +45,5 @@ Refine by merging all Ventura and Monterey versions
 
 ### Policies
 Total of successful patches last week
+
 `index="jamf" source="http:jamf_webhook" policyName="Patch -*" event.successful="true" | stats count`
