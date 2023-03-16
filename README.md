@@ -5,6 +5,8 @@ How to make data-driven decisions to prioritise and operationalise your Jamf dep
 
 ## Setup
 
+There is plenty of existing documentation for this, see below.
+
 ### Splunk Add-in
 
 https://learn.jamf.com/bundle/technical-paper-splunk-current/page/Integrating_Splunk_with_Jamf_Pro.html
@@ -15,18 +17,21 @@ https://www.youtube.com/watch?v=4tsV-wZE6aw
 
 https://learn.jamf.com/bundle/technical-paper-splunk-current/page/Jamf_Pro_Webhooks_for_Splunk.html
 
-Use the URL format `https://http-inputs-XXXX.splunkcloud.com/services/collector/raw`
+We had to use the URL format `https://http-inputs-XXXX.splunkcloud.com/services/collector/raw`
+The suggested one `https://http-inputs-XXXX.splunkcloud.com/services/collector/event` never worked
 
-Header Authentication `{"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX9e68"}`
+Format the Header Authentication like this `{"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX9e68"}`
 
 ### CSV Import
+
+Use this script to export all the policies name and IDs
 
 [PoliciesID_Extract.sh
 ](https://github.com/ooftee/Splunking_with_Jamf/blob/main/PoliciesID_Extract.sh)
 
 ## Basic Searches
 
-NOTE: Index and source name may vary in your environment
+NOTE: Index and source name may vary in your environment.
 
 ### macOS Versions
 Timechart of all different versions over time
@@ -45,19 +50,26 @@ index="jamf" computerOS.version=12.* | timechart span=1d dc(computer_meta.id) as
 ```
 
 ### Using smart groups
+
+Smart group allows you to report in splunk on atributes that might not be collected by the add-in or webhooks like EDR status.
+If you can create a jamf smart group, splunk can report on it.
+
 ```
 index="jamf" groupMembership.groupId=820 
 | timechart span=24h dc(computer_meta.id) as Total
 ```
 
 ### API Stats
+
+API monitoring is great feature of wehbooks, it can’t be done from anywhere else.
+
 ```
 index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation 
 | stats count by event.authorizedUsername, event.restAPIOperationType, event.objectTypeName
 ```
 
 ### Policies
-Total of successful patches last week
+As we have imported the policies' names we can now use wildcards to find things like the total of successful patches.
 
 ```
 index="jamf" source="http:jamf_webhook" policyName="Patch -*" event.successful="true" | stats count
