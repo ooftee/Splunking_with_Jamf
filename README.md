@@ -38,7 +38,7 @@ Timechart of all different versions over time
 
 ```
 index="jamf" computerOS.version=* 
-| timechart span=1d dc(computer_meta.id) as id by computerOS.version
+| timechart span=1d dc(computer_meta.id) as version by computerOS.version
 ```
 
 Refine by merging all Ventura and Monterey versions
