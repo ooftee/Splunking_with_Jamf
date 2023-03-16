@@ -26,6 +26,8 @@ Header Authentication `{"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX
 
 ## Basic Searches
 
+NOTE: index and soucrce name may vary in your environment
+
 ### macOS Versions
 Timechart of all different versions over time
 
