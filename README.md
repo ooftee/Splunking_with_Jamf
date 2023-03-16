@@ -26,32 +26,47 @@ Header Authentication `{"Authorization":"Splunk 2f75XXXX-XXXX-XXXX-XXXX-XXXXXXXX
 
 ## Basic Searches
 
-NOTE: index and soucrce name may vary in your environment
+NOTE: Index and source name may vary in your environment
 
 ### macOS Versions
 Timechart of all different versions over time
 
-`index="jamf" computerOS.version=* | timechart span=1d dc(computer_meta.id) as id by computerOS.version`
+```
+index="jamf" computerOS.version=* 
+| timechart span=1d dc(computer_meta.id) as id by computerOS.version
+```
 
 Refine by merging all Ventura and Monterey versions
 
-`index="jamf" computerOS.version=12.* | timechart span=1d dc(computer_meta.id) as Monterey | appendcols [search index="jamf" computerOS.version=13.* | timechart span=1d dc(computer_meta.id) as Ventura | fields Ventura]`
+```
+index="jamf" computerOS.version=12.* | timechart span=1d dc(computer_meta.id) as Monterey 
+| appendcols [search index="jamf" computerOS.version=13.* | timechart span=1d dc(computer_meta.id) as Ventura | fields Ventura]
+```
 
 ### Using smart groups
-`index="jamf" groupMembership.groupId=820 | timechart span=24h dc(computer_meta.id) as Total`
+```
+index="jamf" groupMembership.groupId=820 
+| timechart span=24h dc(computer_meta.id) as Total
+```
 
 ### API Stats
-`index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation | stats count by event.authorizedUsername, event.restAPIOperationType, event.objectTypeName`
+```
+index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation | stats count by event.authorizedUsername, event.restAPIOperationType, event.objectTypeName
+```
 
 ### Policies
 Total of successful patches last week
 
-`index="jamf" source="http:jamf_webhook" policyName="Patch -*" event.successful="true" | stats count`
+```
+index="jamf" source="http:jamf_webhook" policyName="Patch -*" event.successful="true" | stats count
+```
 
 ## Alerts
 
 ### Device added to ADE
-`index="jamf" source="http:jamf_webhook"  "webhook.webhookEvent"=DeviceAddedToDEP`
+```
+index="jamf" source="http:jamf_webhook"  "webhook.webhookEvent"=DeviceAddedToDEP
+```
 
 ### API Usage
 ```
@@ -60,4 +75,10 @@ index="jamf" source="http:jamf_webhook"  "webhook.webhookEvent"=RestAPIOperati
 ```
 
 ### Policy Failure over 4%
-`index="jamf" source="http:jamf_webhook" | eventstats count(eval('event.successful'=="true")) as "Success" | eventstats count(eval('event.successful'=="false")) as "Failure" | eval Percent=round(Failure/Success*100,2) | search Percent > 4`
+```
+index="jamf" source="http:jamf_webhook" 
+| eventstats count(eval('event.successful'=="true")) as "Success" 
+| eventstats count(eval('event.successful'=="false")) as "Failure" 
+| eval Percent=round(Failure/Success*100,2) 
+| search Percent > 4
+```
