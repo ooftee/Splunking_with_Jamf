@@ -40,7 +40,8 @@ Refine by merging all Ventura and Monterey versions
 
 ```
 index="jamf" computerOS.version=12.* | timechart span=1d dc(computer_meta.id) as Monterey 
-| appendcols [search index="jamf" computerOS.version=13.* | timechart span=1d dc(computer_meta.id) as Ventura | fields Ventura]
+| appendcols 
+  [search index="jamf" computerOS.version=13.* | timechart span=1d dc(computer_meta.id) as Ventura | fields Ventura]
 ```
 
 ### Using smart groups
@@ -51,7 +52,8 @@ index="jamf" groupMembership.groupId=820
 
 ### API Stats
 ```
-index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation | stats count by event.authorizedUsername, event.restAPIOperationType, event.objectTypeName
+index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation 
+| stats count by event.authorizedUsername, event.restAPIOperationType, event.objectTypeName
 ```
 
 ### Policies
@@ -65,12 +67,12 @@ index="jamf" source="http:jamf_webhook" policyName="Patch -*" event.successful="
 
 ### Device added to ADE
 ```
-index="jamf" source="http:jamf_webhook"  "webhook.webhookEvent"=DeviceAddedToDEP
+index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=DeviceAddedToDEP
 ```
 
 ### API Usage
 ```
-index="jamf" source="http:jamf_webhook"  "webhook.webhookEvent"=RestAPIOperation 
+index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation 
 | search "event.restAPIOperationType"=PUT OR "event.restAPIOperationType"=POST
 ```
 
