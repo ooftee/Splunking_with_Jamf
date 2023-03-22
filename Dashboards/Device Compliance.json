@@ -1,0 +1,1069 @@
+{
+	"visualizations": {
+		"viz_single_1": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_1"
+			},
+			"title": "EDR Not Installed",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=393",
+						"newTab": true
+					}
+				}
+			],
+			"showProgressBar": false,
+			"showLastUpdated": false
+		},
+		"viz_single_2": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_2"
+			},
+			"title": "Cloud Proxy Not Installed",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=401",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_3": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_3"
+			},
+			"title": "Vulnerability Scanner Disabled",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=657",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_4": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_4"
+			},
+			"title": "FileVault Disabled",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=392",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_5": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_5"
+			},
+			"title": "SIP Disabled",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=390",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_6": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_6"
+			},
+			"title": "Firewall Disabled",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=826",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_7": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_7"
+			},
+			"title": "Activation Lock Enabled",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=324",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_8": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_8"
+			},
+			"title": "Computer Name Incorrect",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=234",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_9": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_9"
+			},
+			"title": "Legacy Enrollments",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=347",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_single_10": {
+			"type": "splunk.singlevalue",
+			"options": {
+				"colorMode": "block",
+				"drilldown": "none",
+				"backgroundColor": "> majorValue | rangeValue(backgroundColorEditorConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_search_10"
+			},
+			"title": "Time Machine Enabled",
+			"context": {
+				"convertedColorRange": [
+					{
+						"from": 20,
+						"value": "#dc4e41"
+					},
+					{
+						"from": 10,
+						"to": 20,
+						"value": "#f1813f"
+					},
+					{
+						"from": 5,
+						"to": 10,
+						"value": "#f8be34"
+					},
+					{
+						"from": 0,
+						"to": 5,
+						"value": "#0877a6"
+					},
+					{
+						"to": 0,
+						"value": "#53a051"
+					}
+				],
+				"backgroundColorEditorConfig": [
+					{
+						"value": "#53a051",
+						"to": 1
+					},
+					{
+						"value": "#0877a6",
+						"from": 1,
+						"to": 5
+					},
+					{
+						"value": "#f8be34",
+						"from": 5,
+						"to": 10
+					},
+					{
+						"value": "#f1813f",
+						"from": 10,
+						"to": 20
+					},
+					{
+						"value": "#dc4e41",
+						"from": 20
+					}
+				]
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.customUrl",
+					"options": {
+						"url": "https://jss.myseek.xyz/smartComputerGroups.html?id=763",
+						"newTab": true
+					}
+				}
+			]
+		},
+		"viz_p1Agkrdd": {
+			"type": "splunk.singlevalue",
+			"title": "Total Macs Managed",
+			"dataSources": {
+				"primary": "ds_8akDMGPF"
+			},
+			"options": {
+				"backgroundColor": "#62b3b2"
+			}
+		}
+	},
+	"dataSources": {
+		"ds_search_1": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=658 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "EDR_NotInstalled"
+		},
+		"ds_search_2": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=399 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Proxy_NotInstalled"
+		},
+		"ds_search_3": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=657 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Vulnerability_Scanner_Disabled"
+		},
+		"ds_search_4": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=392 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "FileVault_Disabled"
+		},
+		"ds_search_5": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=390 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "SIP_Disabled"
+		},
+		"ds_search_6": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" computerSecurity.firewallEnabled=false | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Firewall_Disabled"
+		},
+		"ds_search_7": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" computerSecurity.activationLockEnabled=true | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Activation_Lock_Enabled"
+		},
+		"ds_search_8": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=234 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Computer_Name_Has_Space"
+		},
+		"ds_search_9": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=347 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Non_DEP_Macs_New_Image"
+		},
+		"ds_search_10": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"jamf\" [search index=\"jamf\" groupMembership.groupId=763 | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count",
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				}
+			},
+			"name": "Time Machine Enabled"
+		},
+		"ds_8akDMGPF": {
+			"type": "ds.search",
+			"options": {
+				"queryParameters": {
+					"earliest": "$time_selected.earliest$",
+					"latest": "$time_selected.latest$"
+				},
+				"query": "index=\"jamf\" [search index=\"jamf\" | dedup computer_meta.id | fields computer_meta.serial] computerGeneral.lastIpAddress=* | dedup computer_meta.id | iplocation computerGeneral.lastIpAddress | search Country=\"$country_selected$\" | stats count"
+			},
+			"name": "Total"
+		}
+	},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {}
+				}
+			}
+		}
+	},
+	"inputs": {
+		"input_1": {
+			"type": "input.timerange",
+			"title": "Timeframe",
+			"options": {
+				"token": "time_selected",
+				"defaultValue": "-24h@h,now"
+			}
+		},
+		"input_2": {
+			"type": "input.dropdown",
+			"title": "Country",
+			"options": {
+				"token": "country_selected",
+				"defaultValue": "*",
+				"items": [
+					{
+						"value": "*",
+						"label": "All"
+					},
+					{
+						"value": "Australia",
+						"label": "Australia"
+					},
+					{
+						"value": "Malaysia",
+						"label": "Malaysia"
+					},
+					{
+						"value": "Hong Kong",
+						"label": "Hong Kong"
+					},
+					{
+						"value": "New Zealand",
+						"label": "New Zealand"
+					},
+					{
+						"value": "Singapore",
+						"label": "Singapore"
+					},
+					{
+						"value": "Philippines",
+						"label": "Philippines"
+					},
+					{
+						"value": "Thailand",
+						"label": "Thailand"
+					},
+					{
+						"value": "Indonesia",
+						"label": "Indonesia"
+					},
+					{
+						"value": "China",
+						"label": "China"
+					},
+					{
+						"value": "United States",
+						"label": "United States"
+					},
+					{
+						"value": "India",
+						"label": "India"
+					}
+				]
+			}
+		}
+	},
+	"layout": {
+		"type": "grid",
+		"options": {
+			"submitButton": false,
+			"height": 750
+		},
+		"structure": [
+			{
+				"item": "viz_p1Agkrdd",
+				"type": "block",
+				"position": {
+					"x": 0,
+					"y": 0,
+					"w": 300,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_4",
+				"type": "block",
+				"position": {
+					"x": 0,
+					"y": 250,
+					"w": 300,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_8",
+				"type": "block",
+				"position": {
+					"x": 0,
+					"y": 500,
+					"w": 400,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_1",
+				"type": "block",
+				"position": {
+					"x": 300,
+					"y": 0,
+					"w": 300,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_5",
+				"type": "block",
+				"position": {
+					"x": 300,
+					"y": 250,
+					"w": 300,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_9",
+				"type": "block",
+				"position": {
+					"x": 400,
+					"y": 500,
+					"w": 400,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_2",
+				"type": "block",
+				"position": {
+					"x": 600,
+					"y": 0,
+					"w": 302,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_6",
+				"type": "block",
+				"position": {
+					"x": 600,
+					"y": 250,
+					"w": 302,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_10",
+				"type": "block",
+				"position": {
+					"x": 800,
+					"y": 500,
+					"w": 400,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_3",
+				"type": "block",
+				"position": {
+					"x": 902,
+					"y": 0,
+					"w": 298,
+					"h": 250
+				}
+			},
+			{
+				"item": "viz_single_7",
+				"type": "block",
+				"position": {
+					"x": 902,
+					"y": 250,
+					"w": 298,
+					"h": 250
+				}
+			}
+		],
+		"globalInputs": [
+			"input_1",
+			"input_2"
+		]
+	},
+	"description": "Using smart group IDs and static list of countries",
+	"title": "XWorld23 - Device Compliance"
+}

@@ -1,0 +1,56 @@
+<form version="1.1">
+  <label>XWorld23 - Mac Exec Report</label>
+  <fieldset submitButton="false">
+    <input type="time" token="time_selected">
+      <label></label>
+      <default>
+        <earliest>-30d@d</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <single>
+        <title>Total Devices Deployed</title>
+        <search>
+          <query>index="jamf" groupMembership.groupId=377 
+| dedup computer_meta.id
+| stats count</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Total Devices Under Management</title>
+        <search>
+          <query>index="jamf" sourcetype="jssUapiComputer:computerGeneral"
+| dedup computer_meta.id 
+| spath computerGeneral.remoteManagement.managed
+| search computerGeneral.remoteManagement.managed=true
+| stats count</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Total Applications Patched</title>
+        <search>
+          <query>index="jamf" source="http:jamf_webhook" policyName="Patch -*" event.successful="true"
+| stats count</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+  </row>
+</form>

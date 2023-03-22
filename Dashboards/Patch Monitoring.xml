@@ -1,0 +1,140 @@
+<form version="1.1">
+  <label>XWorld23 - Patch Monitoring</label>
+  <fieldset submitButton="false">
+    <input type="time" token="time_selected" searchWhenChanged="true">
+      <label></label>
+      <default>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <single>
+        <title>Global Stats</title>
+        <search>
+          <query>index="jamf" source="http:jamf_webhook" policyName="Patch -*"
+| eventstats count(eval('event.successful'=="true")) as "Success"
+| eventstats count(eval('event.successful'=="false")) as "Failure"
+| eval Percent=round(Failure/Success*100,2)
+| table Success Failure Percent</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="colorMode">block</option>
+        <option name="drilldown">none</option>
+        <option name="height">240</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x555","0x118832","0xd41f1f","0xf8be34","0x0877a6"]</option>
+        <option name="rangeValues">[0,2,10,100]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">1</option>
+        <option name="trellis.size">large</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Top Failing Policies Trend</title>
+        <search>
+          <query>index="jamf" source="http:jamf_webhook" policyName="Patch -*"
+| eventstats count(eval('event.successful'=="true")) as "POL_Success" by policyName
+| eventstats count(eval('event.successful'=="false")) as "POL_Failure" by policyName
+| eval POL_Percent=round(POL_Failure/POL_Success*100,2)
+| eventstats avg("POL_Percent") by policyName
+| search POL_Failure &gt; 2
+| timechart span=1d avg("POL_Percent") by policyName limit=5</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="colorMode">block</option>
+        <option name="drilldown">none</option>
+        <option name="height">165</option>
+        <option name="rangeColors">["0x00D447","0xA0D400","0xf8be34","0xD4AE00","0xD48C00","0xD46D00","0xD43200"]</option>
+        <option name="rangeValues">[3,30,70,100,200,400]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">1</option>
+        <option name="trellis.size">medium</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="unit">%</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Total Successful Patches</title>
+        <search>
+          <query>index="jamf" source="http:jamf_webhook" "event.successful"=true policyName="Patch -*"
+| timechart span=1d count by event.successful</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Total Computers Patched</title>
+        <search>
+          <query>index="jamf" source="http:jamf_webhook" "event.successful"=true policyName="Patch -*"
+| dedup event.computer.serialNumber
+| timechart span=1d count by event.successful</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Successful Patches - Individual Policies</title>
+        <search>
+          <query>index="jamf" source="http:jamf_webhook" "event.successful"=true policyName="Patch -*"
+| timechart count by policyName limit=20</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Monterey vs Ventrua</title>
+        <search>
+          <query>index="jamf" computerOS.version=12.* | timechart span=1d dc(computer_meta.id) as Monterey
+| appendcols 
+    [search index="jamf" computerOS.version=13.* | timechart span=1d dc(computer_meta.id) as Ventura 
+    |  fields Ventura]</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>macOS Versions</title>
+        <search>
+          <query>index="jamf" computerOS.version=* | timechart span=1d dc(computer_meta.id) as id by computerOS.version</query>
+          <earliest>$time_selected.earliest$</earliest>
+          <latest>$time_selected.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+</form>
