@@ -12,7 +12,7 @@
 #set -x
 
 ###############################################################################
-## variable declarations
+## variable declarations - replace with your server credentials
 
 username="*****"
 password="*****"
