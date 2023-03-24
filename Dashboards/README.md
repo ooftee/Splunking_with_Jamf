@@ -8,9 +8,13 @@ Here are some dashboard examples, don't forget to use the "Open in Search" butto
 
 ### Mac Exec Report
 
+Can be used as a high overview monthyl report
+
 <img width="1658" alt="Dash-ExecReport" src="https://user-images.githubusercontent.com/88021434/227395682-b4a4216c-4a2c-4e96-bdf8-027a6d97ab86.png">
 
 ### Device Compliance
+
+Using smart groups and a static list of countries to speed things up
 
 <img width="1614" alt="Dash-Compliance-1" src="https://user-images.githubusercontent.com/88021434/227395816-1e23bf09-63f4-4ee5-95f2-8614b5541fde.png">
 
