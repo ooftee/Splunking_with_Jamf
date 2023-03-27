@@ -90,9 +90,10 @@ index="jamf" source="http:jamf_webhook" "webhook.webhookEvent"=RestAPIOperation
 
 ### Policy Failure over 4%
 ```
-index="jamf" source="http:jamf_webhook" 
-| eventstats count(eval('event.successful'=="true")) as "Success" 
-| eventstats count(eval('event.successful'=="false")) as "Failure" 
-| eval Percent=round(Failure/Success*100,2) 
-| search Percent > 4
+index="jamf" source="http:jamf_webhook"
+| eventstats count(eval('event.successful'=="true")) as "POL_Success" by policyName
+| eventstats count(eval('event.successful'=="false")) as "POL_Failure" by policyName
+| eval POL_Percent=round(POL_Failure/POL_Success*100,2)
+| eventstats avg("POL_Percent") by policyName
+| search POL_Percent > 4
 ```
