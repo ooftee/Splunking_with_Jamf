@@ -16,7 +16,7 @@ Can be used as a high overview monthyl report
 
 Using smart groups and a static list of countries to speed things up
 
-<img width="1599" alt="Dash-Compliance-1" src="https://user-images.githubusercontent.com/88021434/227396711-8c524dae-22b3-471b-ae19-04de4e934c3f.png">
+<img width="1405" alt="Dash-Compliance-1" src="https://user-images.githubusercontent.com/88021434/227833565-4c943884-f7fc-4fc9-b2f1-0f9e17d1b874.png">
 
 ### Patch Monitoring
 
