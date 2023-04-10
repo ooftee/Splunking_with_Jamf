@@ -3,6 +3,14 @@
 
 How to make data-driven decisions to prioritise and operationalise your Jamf deployment.
 
+## Youtube recording
+
+https://www.youtube.com/watch?v=BZcrl69nxoE
+
+## Macadmins Slack
+
+@ooftee
+
 ## Setup
 
 There is plenty of existing documentation for this, see below.
